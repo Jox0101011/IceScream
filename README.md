@@ -8,8 +8,8 @@ Lightweight peer-to-peer communication protocol with tui written in Go.
 ╠══════════════════════════════════════════════════════════════════╣
 ║ [14:32:01] -!- bob (:9901) joined the network                    ║
 ║ [14:32:05] <bob> hey everyone                                    ║
-║ [14:32:08] <alice> welcome bob!                                  ║
-║ [14:32:10] *upload* <bob> shared 'config.json' (1.2kb)           ║
+║ [14:32:08] <hzr> welcome bob!                                    ║
+║ [14:32:10] *upload* <bob> shared 'config.json' (1.2kb)            ║
 ╠══════════════════════════════════════════════════════════════════╣
 ║ > _                                                              ║
 ╚══════════════════════════════════════════════════════════════════╝
