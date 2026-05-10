@@ -1,5 +1,5 @@
 # 🧊 IceScream Protocol
-
+<img src="./icescream.png">
 Lightweight peer-to-peer communication protocol with tui written in Go.
 
 ```text
