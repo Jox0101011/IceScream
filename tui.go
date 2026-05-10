@@ -117,12 +117,7 @@ func (t *TUI) WriteExecReply(from, output, errStr string) {
 func (t *TUI) Run() {
 	defer t.screen.Fini()
 
-<<<<<<< HEAD
-	t.AddLine(Line{KindSystem, time.Now(), "", "IceScream v0.1.0 — /help to commands list", false})
-
-=======
 	t.AddLine(Line{KindSystem, time.Now(), "", "IceScream v0.1.2 — /help to commands list", false})
->>>>>>> ff67317 (low alterations)
 	go func() {
 		tick := time.NewTicker(2 * time.Second)
 		defer tick.Stop()
@@ -244,11 +239,7 @@ func (t *TUI) handleSlashCommand(line string) {
 	switch parts[0] {
 	case "/connect":
 		if len(parts) < 2 {
-<<<<<<< HEAD
-			t.WriteError("Uso: /connect <host:port>")
-=======
 			t.WriteError("Usage: /connect <host:port>")
->>>>>>> ff67317 (low alterations)
 			return
 		}
 		addr := parts[1]
@@ -495,10 +486,6 @@ func (t *TUI) drawChat(x, y, w, h int) {
 		}
 	}
 
-<<<<<<< HEAD
-	// Aplica scroll
-=======
->>>>>>> ff67317 (low alterations)
 	total := len(visual)
 	start := total - h - t.scrollOffset
 	if start < 0 {
@@ -510,10 +497,6 @@ func (t *TUI) drawChat(x, y, w, h int) {
 	}
 	visible := visual[start:end]
 
-<<<<<<< HEAD
-	// Renderiza
-=======
->>>>>>> ff67317 (low alterations)
 	for row, vl := range visible {
 		col := x
 		for _, r := range vl.prefix {
