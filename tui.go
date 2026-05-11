@@ -13,6 +13,8 @@ import (
 	"github.com/google/uuid"
 )
 
+
+
 var (
 	styleDefault   = tcell.StyleDefault.Background(tcell.ColorBlack).Foreground(tcell.ColorSilver)
 	styleStatusBar = tcell.StyleDefault.Background(tcell.ColorNavy).Foreground(tcell.ColorWhite).Bold(true)
@@ -117,7 +119,7 @@ func (t *TUI) WriteExecReply(from, output, errStr string) {
 func (t *TUI) Run() {
 	defer t.screen.Fini()
 
-	t.AddLine(Line{KindSystem, time.Now(), "", "IceScream v0.1.2 — /help to commands list", false})
+	t.AddLine(Line{KindSystem, time.Now(), "", "IceScream v0.1.2 — use /help to commands list", false})
 	go func() {
 		tick := time.NewTicker(2 * time.Second)
 		defer tick.Stop()
@@ -360,7 +362,6 @@ func (t *TUI) printHelp() {
 		" :chat <msg>            send msg",
 		" :upload <arquivo>      send archive",
 		" :exec <cmd>            exec command",
-		" PgUp/PgDn              scroll",
 		"────────────────────────────────────────────",
 	}
 	for _, h := range helps {
@@ -527,8 +528,9 @@ func (t *TUI) drawStatusBar(row, w int) {
 	pc := len(t.node.peers)
 	t.node.peersMu.RUnlock()
 
+	CustomMsg := "IceScream On Top"
 	left := fmt.Sprintf(" [IceScream] %s@%s ", t.node.nickname, t.node.listenAddr)
-	right := fmt.Sprintf(" peers: %d | PgUp/PgDn scroll ", pc)
+	right := fmt.Sprintf(" peers: %d | %s ", pc, CustomMsg)
 
 	drawText(t.screen, 0, row, styleStatusBar, left)
 	drawText(t.screen, w-len(right), row, styleStatusBar, right)
